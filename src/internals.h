@@ -1,11 +1,14 @@
-#ifndef _internals_h_
-#define _internals_h_
+#ifndef __internals_h__
+#define __internals_h__
+
+// It's ok to use #include in headers, but the header guard is necessary.
 
 #include <Rcpp.h>
 
-using namespace Rcpp;
+// Don't use namespace in headers, only in .cpp files.
+// Always use explicit naming in headers.
 
-double pmvnorm(NumericVector lls, NumericVector uls,
-               NumericVector mu, NumericMatrix sigma);
+double pmvnorm(Rcpp::NumericVector lls, Rcpp::NumericVector uls,
+               Rcpp::NumericVector mu, Rcpp::NumericMatrix sigma);
 
 #endif
